@@ -1,0 +1,246 @@
+/* src/pages/Login.css */
+
+
+:root {
+    --text: #020814;
+    --text-h: #f1efef;
+    --bg: #f9edf0;
+    --floater: #e7d9d1;
+    --border:1.5px solid #2e303a;
+    --border-hover: 1.5px solid var(--span);
+    --code-bg: #1f2028;
+    --accent: #c084fc;
+    --text-w: 300;
+    --header-w: 500;
+
+    --span: #2d79f3;
+    --span-hover: #1a5ed6;
+    --span-disabled: #aaa;
+    --heading: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    --submit-button-bg: #041530;
+    --submit-button-bg-hover: #031b41;
+    --submit-button-bg-disabled: #aaa;
+
+    font: 18px/145% var(--sans);
+    font-size: 18px;
+    color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #9ca3af;
+    --text-h: #f3f4f6;
+    --bg: #02021d;
+    --floater: #1a1a2e;
+    --border: 1.5px solid #eaebf3;
+    --code-bg: #1f2028;
+    --accent: #c084fc;
+    --accent-bg: rgba(192, 132, 252, 0.15);
+    --accent-border: rgba(192, 132, 252, 0.5);
+    --social-bg: rgba(47, 48, 58, 0.5);
+    --shadow:
+      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
+    --submit-button-bg: var(--span);
+    --submit-button-bg-hover: var(--span-hover);
+    --submit-button-bg-disabled: var(--span-disabled);
+    color-scheme: dark; 
+  }
+
+}
+
+/* Centers the card nicely on the viewport */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--bg);
+  border:none !important;
+
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: var(--floater);
+    padding: 30px;
+    width: 450px;
+    max-width: 70%;
+    border-radius: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    box-shadow: 6px 6px 12px rgba(0,0,0,0.05);
+
+    &::placeholder {font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;}
+    button 
+    {
+      border: var(--border);
+      align-self: flex-end;
+    }
+  }
+
+  .error-banner {
+    background-color: #ffebee;
+    color: #c62828;
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 14px;
+    border-left: 4px solid #c62828;
+    font-family: sans-serif;
+  }
+
+
+
+  .flex-column > label {
+    color: var(--text);
+    font-weight: var(--header-w);
+  }
+
+  .inputForm {
+    border: var(--border);
+    border-radius: 10px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    transition: 0.2s ease-in-out;
+
+    cursor: text;
+  
+
+  .input {
+    border: none;
+    margin-left: 10px;
+    border-radius: 10px;
+    width: 85%;
+    height: 100%;
+    background-color: inherit;
+    caret-color: var(--text);
+    color: var(--text);
+    /* background-color: transparent; */
+    &:focus {
+      outline: none;
+    }
+    &::-ms-clear,
+    &::-ms-reveal,
+    &::-webkit-contacts-auto-fill-button,
+    &::-webkit-credentials-auto-fill-button {
+      display: none;
+    }
+
+  }
+
+  &:focus-within {
+    border: 1.5px solid #2d79f3;
+  }
+  }
+  /* 3. THE TOGGLE BUTTON CLEANUP */
+  /* This styles the wrapper around YOUR custom eye icon so it behaves like a clean clickable area */
+  .password-toggle-btn {
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      height: 100%;       
+      background: none;
+      padding: 0 20px;
+      cursor: pointer;
+      border: none !important;
+  }
+
+  .flex-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    justify-content: space-between;
+
+    div > label {
+    color: var(--text);
+    font-weight: var(--text-w);
+  }
+  }
+
+
+  input[type="checkbox"] {
+    accent-color: var(--span); /* Or var(--accent) depending on your design choice */ 
+  }
+
+  .span {
+    margin-left: 5px;
+    color: var(--span);
+    font-weight: var(--text-w);
+    cursor: pointer;
+  }
+
+  .button-submit 
+  {
+    margin: 20px 0 10px 0;
+    background-color: var(--submit-button-bg);
+    border: var(--border);
+    color: var(--text-h);
+    font-weight: var(--text-w);
+    border-radius: 10px;
+    height: 50px;
+    width: 100%;
+    cursor: pointer;
+
+
+    &:hover 
+    {
+    background-color: var(--text-h);
+    color: var(--submit-button-bg);
+    }
+    &:disabled {
+    background-color: var(--submit-button-bg-disabled);
+    cursor: not-allowed;
+  }
+  }
+
+
+  .p {
+    text-align: center;
+    color: var(--text);
+    margin: 5px 0;
+  }
+
+  .btn {
+    color: var(--text);
+    margin-top: 10px;
+    width: 100%;
+    height: 50px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: var(--text-w) ;
+    gap: 10px;
+    border: 1px solid var(--border);
+    background-color: var(--bg);
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+    &:hover 
+    {
+      border: 1px solid var(--span);
+    }
+    &:disabled 
+    {
+      border: 1px solid var(--span-disabled);
+      cursor: not-allowed;
+    }
+  }
+
+  .input:-webkit-autofill,
+  .input:-webkit-autofill:hover, 
+  .input:-webkit-autofill:focus, 
+  .input:-webkit-autofill:active {
+    /* Trick 1: Use a massive, transparent inner shadow to drown out the browser's default background color */
+    -webkit-box-shadow: 0 0 0 white inset !important;
+    box-shadow: 0 0 0  white inset !important;
+    
+    /* Trick 2: Force the text color to stay dark grey so it remains readable */
+    -webkit-text-fill-color: var(--text) !important;
+    
+    /* Trick 3: Keep your smooth font transition */
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+}
